@@ -1,4 +1,4 @@
-package Exc3;
+package Exc4;
 
 public class Funcionario {
 
@@ -29,8 +29,8 @@ public class Funcionario {
 
     @Override
     public boolean equals(Object outroFuncionario) {
-      if (!(outroFuncionario instanceof Funcionario)){return false;}
-      if (((Funcionario) outroFuncionario).getNumeroDeRegistro() == this.getNumeroDeRegistro()){return true;}
-      return false;
+        if (!(outroFuncionario instanceof Funcionario)){return false;}
+        if (((Funcionario) outroFuncionario).getNumeroDeRegistro() == this.getNumeroDeRegistro()){return true;}
+        return false;
     }
 }
