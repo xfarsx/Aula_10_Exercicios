@@ -14,13 +14,13 @@ public class Retangulo implements FormaGeometrica {
     }
 
     @Override
-    public void ImprimirLados() {
-        System.out.println("================\nBase: " + base + "\naltura: " + altura);
+    public void ImprimirCalculo() {
+        System.out.println("Retangulo\n================\nBase: " + base + " m" + "\naltura: " + altura + " m");
         double area, perimetro;
         perimetro = base * 2 + altura * 2;
-        System.out.println("Perimetro: " + perimetro);
+        System.out.println("Perimetro: " + perimetro + " m");
         area = base * altura;
-        System.out.println("Area: " + area + "\n===============");
+        System.out.println("Area: " + area + " m2" + "\n================");
 
     }
 }

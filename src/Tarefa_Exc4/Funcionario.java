@@ -44,7 +44,7 @@ public class Funcionario extends Departamento {
     {
         double novoSalario;
         novoSalario = getSalario() * aumento;
-        System.out.println("\n====================================" + "\nFuncionário(a) = " + getNome() + "\nAntigo Salário: R$ " + getSalario() +
+        System.out.println("\n====================================" + "\nFuncionário(a): " + getNome() + "\nAntigo Salário: R$ " + getSalario() +
                 "\nNovo salário: R$ " + novoSalario + "\n====================================");
     }
 }

@@ -12,10 +12,10 @@ public class Quadrado implements FormaGeometrica {
     }
 
     @Override
-    public void ImprimirLados() {
-            System.out.println("================\nLado: " + lado);
+    public void ImprimirCalculo() {
+            System.out.println("Quadrado\n================\nLado: " + lado + " m");
             lado = lado * 4;
-            System.out.println("Perimetro: " + lado);
-            System.out.println("Area: " + lado + "\n===============");
+            System.out.println("Perimetro: " + lado + " m");
+            System.out.println("Area: " + lado + " m2"  + "\n================");
     }
 }

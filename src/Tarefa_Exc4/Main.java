@@ -14,7 +14,9 @@ public class Main {
         double num = 0;
 
         List<Departamento> departamentos = new ArrayList<>();
-        Empresa novaEmpresa = new Empresa ("GessoPro",departamentos,"25.245.174/0001-25");
+        Empresa gessoPro = new Empresa ("GessoPro",departamentos,"25.245.174/0001-25");
+        Empresa mercadoDuilio = new Empresa ("Duilio",departamentos,"15.374.215/0001-18");
+        List<Empresa> listaDeEmpresas = new ArrayList<>();
         List<Funcionario> fContabilidade = new ArrayList<>();
         List<Funcionario> fVendas = new ArrayList<>();
         Departamento contabilidade = new Departamento("Contabilidade",fContabilidade);
@@ -23,7 +25,9 @@ public class Main {
         Funcionario func2 = new Funcionario("Júlio","24/06/2016",3450.0);
         Funcionario func3 = new Funcionario("Gabriela","15/04/2016",3200.0);
         Funcionario func4 = new Funcionario("Bianca","07/11/2016",4550.0);
-
+        
+        listaDeEmpresas.add(gessoPro);
+        listaDeEmpresas.add(mercadoDuilio);
         departamentos.add(contabilidade);
         departamentos.add(vendas);
         fContabilidade.add(func1);
@@ -32,8 +36,9 @@ public class Main {
         fVendas.add(func4);
 
         System.out.println("================================\nEmpresas Registradas!\n================================");
-        System.out.println("\nRazão Social: " + novaEmpresa.getNome() + "\nCNPJ: " + novaEmpresa.getCnpj() + "\n================================");
-
+        for (int i = 0; i<listaDeEmpresas.size();i++) {
+            System.out.println("\nRazão Social: " + listaDeEmpresas.get(i).getNome() + "\nCNPJ: " + listaDeEmpresas.get(i).getCnpj() + "\n================================");
+        }
         //Pergunta se quer listar e ver os departamentos que existem na empresa
         System.out.println("Verificar os departamentos da empresa? (S) = Sim / (N) = Não");
         Scanner sc = new Scanner (System.in);
@@ -63,7 +68,7 @@ public class Main {
 
         if (digitar.equals("S"))
         {
-                novaEmpresa.listarTudo(departamentos);//método para rodar todos os departamentos e todos os funcionários (formatados).
+                gessoPro.listarTudo(departamentos);//método para rodar todos os departamentos e todos os funcionários (formatados).
         }
         if (digitar.equals("N"))//Se não, pergunta se quer ver a lista de funcionários de cada departamento
         {
@@ -86,7 +91,7 @@ public class Main {
             vendas.listaDeFuncionarios(fVendas);
         }
         if (digitar.equals("N")) {//Se não, pergunta se quer dar um funionário para algum fiuncionário.
-            System.out.println("Dar aumento para um funcionário? Digite");
+            System.out.println("Dar aumento para um funcionário? Digite\n");
             System.out.println("(1)" + func1.getNome() + "\n(2)" + func2.getNome() + "\n(3)" + func3.getNome() + "\n(4)" + func4.getNome() + "\n(5)Continuar...");
 
             Scanner sc3 = new Scanner(System.in);
@@ -125,7 +130,7 @@ public class Main {
             }
             //Se não, pergunta se quer transferir funcionário de algum departamento
             if (digitarN == 5) {
-                System.out.println("Deseja transferir alguém de departamento? ");
+                System.out.println("Deseja transferir alguém de departamento? Digite\n");
                 System.out.println("(1)" + func1.getNome() + "\n(2)" + func2.getNome() + "\n(3)" + func3.getNome() + "\n(4)" + func4.getNome() + "\n(5) Não, Sair do programa.");
             }
             Scanner sc5 = new Scanner(System.in);
@@ -136,21 +141,21 @@ public class Main {
                 digitarN = sc5.nextInt();
             }
             if (digitarN == 1) {
-                contabilidade.transferirDep(func1, fVendas);//Método para Transferir o funcionário
-                novaEmpresa.listarTudo(departamentos);//Imprime a lista mostrando a transferencia
+                contabilidade.transferirDep(func1,vendas);//Método para Transferir o funcionário
+                gessoPro.listarTudo(departamentos);//Imprime a lista mostrando a transferencia
             }
             if (digitarN == 2) {
-                contabilidade.transferirDep(func2, fVendas);
-                novaEmpresa.listarTudo(departamentos);
+                contabilidade.transferirDep(func2,vendas);
+                gessoPro.listarTudo(departamentos);
             }
             if (digitarN == 3) {
-                vendas.transferirDep(func3, fContabilidade);
-                novaEmpresa.listarTudo(departamentos);
+                vendas.transferirDep(func3,contabilidade);
+                gessoPro.listarTudo(departamentos);
 
             }
             if (digitarN == 4) {
-                vendas.transferirDep(func4, fContabilidade);
-                novaEmpresa.listarTudo(departamentos);
+                vendas.transferirDep(func4,contabilidade);
+                gessoPro.listarTudo(departamentos);
             }
             System.out.println();
             if (digitarN == 5) {//Se não, Sai do programa

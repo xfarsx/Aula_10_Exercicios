@@ -13,9 +13,9 @@ public class Main {
 
         List<Double> formas = new ArrayList<>();
 
-        quad.ImprimirLados();
-        retangulo.ImprimirLados();
-        circulo.ImprimirLados();
+        quad.ImprimirCalculo();
+        retangulo.ImprimirCalculo();
+        circulo.ImprimirCalculo();
 
 
     }

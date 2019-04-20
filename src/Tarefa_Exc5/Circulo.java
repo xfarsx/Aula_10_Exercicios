@@ -11,12 +11,12 @@ public class Circulo implements FormaGeometrica {
     }
 
     @Override
-    public void ImprimirLados() {
+    public void ImprimirCalculo() {
         double diametro,area;
-        System.out.println("================\nRaio: " + raio);
+        System.out.println("Circulo\n================\nRaio: " + raio + " m");
         diametro = raio * 2;
-        System.out.println("Diametro: " + diametro);
+        System.out.println("Diametro: " + diametro + " m");
         area = raio * 2 * 3.14;
-        System.out.println("Area: " + area + "\n===============");
+        System.out.println("Area: " + area + " m2" + "\n================");
     }
 }

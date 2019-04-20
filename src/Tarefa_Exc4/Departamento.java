@@ -38,9 +38,10 @@ public class Departamento  {
                 "\nNome: " + dept.get(i).getNome() + "\nData da admissão: " + dept.get(i).getDataDeAdmissao() + "\nSalário: R$" + dept.get(i).getSalario()  + "\n==================================");
             }
     }
-    public void transferirDep (Funcionario func,List<Funcionario> novoDpt){
-        System.out.println("\n===================================" + "\nTransferindo funcionário(a): " + func.getNome() + "\nDepartamento: " + this.departamento + "\n===================================");
+    public void transferirDep (Funcionario func,Departamento novoDpt){
+        System.out.println("\n===================================" + "\nTransferindo funcionário(a): " + func.getNome() + "\nAntigo Departamento: " + this.departamento + "\nNovo Departamento: " +
+              novoDpt.getDepartamento() + "\n===================================");
         funcionarios.remove(func);
-        novoDpt.add(func);
+        novoDpt.getFuncionarios().add(func);
     }
 }
